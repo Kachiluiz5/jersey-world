@@ -6,10 +6,27 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Zairito - eCommerce HTML Template</title>
+        <title>jersey world collection</title>
         <meta name="description" content="Zairito - eCommerce HTML Template" />
         <meta name="keywords" content="business,eCommerce, Ecommerce, ecommerce, shop, shopify, shopify ecommerce, creative, woocommerce, design, gallery, minimal, modern, html, html5, responsive" />
         <meta name="author" content="Zairito" />
+
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<!-- Owl-carousel CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw=" crossorigin="anonymous" />
+
+<!-- font awesome icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+
+<!-- Custom CSS file -->
+<link rel="stylesheet" href="style.css">
+
+
+
+
 
         <!-- fonts file -->
         <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
@@ -64,7 +81,7 @@
                                     <li class="menu-item"><a class="menu-link" href="faq.html">How To Buy</a></li>
                                 </ul>
                             </div>
-                            <div class="switcher-lang-currency">
+                            <!-- <div class="switcher-lang-currency">
                                 <div class="currency-switcher">
                                     <span class="flag"><i class="fas fa-dollar-sign"></i></span>
                                     <a href="#" class="currency">Usd <i class="fas fa-angle-down"></i></a>
@@ -81,8 +98,8 @@
                                         <li class="single-lang"><span class="flag"><img src="assets/images/india.png" alt="india"></span><a class="lang-text" href="#">Hin</a></li>
                                     </ul>
                                 </div>
-                            </div>
-                            <a class="account-btn" href="sign-in.html"><i class="user-icon flaticon-user"></i> My Account </a>
+                            </div> -->
+                            <!-- <a class="account-btn" href="sign-in.html"><i class="user-icon flaticon-user"></i> My Account </a> -->
                         </div>
                     </div>
                     </div>
@@ -92,7 +109,7 @@
                 <div class="container">
                     <div class="header-middle-wrap">
                         <div class="brand-area">
-                            <a class="brand-logo" href="index.html"><img class="brand-image" src="assets/images/j.png" alt="zairito" /></a>
+                            <a class="brand-logo" href="index.php"><img class="brand-image" src="assets/images/j.png" alt="zairito" /></a>
                         </div>
                         <div class="search-area">
                             <form>
@@ -140,8 +157,8 @@
                             <div class="cart single-btn">
                                 <a data-bs-toggle="offcanvas" href="#cartOffcanvasSidebar" role="button" aria-controls="cartOffcanvasSidebar" class="cart-btn header-btn">
                                     <div class="btn-left">
-                                        <i class="btn-icon flaticon-shopping-bag"></i>
-                                        <span class="count">10</span>
+                                        <i class="btn-icon flaticon-shopping-bag" href="cart.php"></i>
+                                        <span class="count"><?php echo count($product->getData('cart')); ?></span>
                                     </div>
                                     <div class="btn-right">
                                         <span class="btn-text">Your Cart</span>
@@ -157,16 +174,11 @@
                 <nav class="menu-area">
                     <ul class="main-menu">
                         <li class="menu-item menu-item-has-children active">
-                            <a class="menu-link" href="#">Home <i class="arrow-icon fas fa-angle-down"></i></a>
-                            <ul class="sub-menu">
-                                <li class="sub-menu-item"><a class="sub-menu-link" href="index.html">Home One</a></li>
-                                <li class="sub-menu-item"><a class="sub-menu-link" href="index2.html">Home Two</a></li>
-                                <li class="sub-menu-item"><a class="sub-menu-link" href="index3.html">Home Three</a></li>
-                            </ul>
+                            <a class="menu-link" href="#">Club Jerseys<i class="arrow-icon fas fa-angle-down"></i></a>
                         </li>
                         <li class="menu-item mega-menu-parent">
-                            <a class="menu-link" href="#">Shop <i class="arrow-icon fas fa-angle-down"></i></a>
-                            <div class="mega-menu-area">
+                            <a class="menu-link" href="#">Club Jerseys<i class="arrow-icon fas fa-angle-down"></i></a>
+                            <!-- <div class="mega-menu-area">
                                 <div class="container">
                                     <ul class="mega-menu">
                                         <li class="mega-menu-item">
@@ -200,12 +212,12 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> -->
                         </li>
 
                         <li class="menu-item menu-item-has-children">
-                            <a class="menu-link" href="#">Pages <i class="arrow-icon fas fa-angle-down"></i></a>
-                            <ul class="sub-menu">
+                            <a class="menu-link" href="#">Basketball Jerseys <i class="arrow-icon fas fa-angle-down"></i></a>
+                            <!-- <ul class="sub-menu">
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="term-conditions.html">Term & Conditions</a></li>
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="privacy-policy.html">Privacy Policy</a></li>
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="shipping-return.html">Shipping & Return</a></li>
@@ -214,16 +226,12 @@
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="error.html">Error Page</a></li>
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="sign-in.html">Sign In</a></li>
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="sign-up.html">Sign Up</a></li>
-                            </ul>
+                            </ul> -->
                         </li>
 
-                        <li class="menu-item"><a class="menu-link" href="about-us.html">about us</a></li>
+                        <li class="menu-item"><a class="menu-link" href="about-us.html">Footwears</a></li>
                         <li class="menu-item menu-item-has-children">
-                            <a class="menu-link" href="#">Blog <i class="arrow-icon fas fa-angle-down"></i></a>
-                            <ul class="sub-menu">
-                                <li class="sub-menu-item"><a class="sub-menu-link" href="blog.html">Blog Grid</a></li>
-                                <li class="sub-menu-item"><a class="sub-menu-link" href="single-blog.html">Blog Single</a></li>
-                            </ul>
+                            <a class="menu-link" href="#">Blog</a>
                         </li>
                         <li class="menu-item"><a class="menu-link" href="contact.html">Contact</a></li>
                         
@@ -305,7 +313,7 @@
                         <li class="menu-item">
                             <span class="menu-expand"></span>
                             <a class="menu-link" href="#">Shop</a>
-                            <ul class="sub-menu">
+                            <!-- <ul class="sub-menu">
                                 <li class="sub-menu-item"><a class="sub-menu-title" href="#">Shop Layout</a></li>
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="shop-grid-left-sidebar.html">Shop Grid Leftsidebar <span class="menu-item-badge new">New</span></a></li>
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="shop-grid-right-sidebar.html">Shop Grid Rightsidebar </a></li>
@@ -322,12 +330,12 @@
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="compare.html">Compare</a></li>
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="wish-list.html">Wishlist</a></li>
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="empty-wish-list.html">Empty Wishlist</a></li>
-                            </ul>
+                            </ul> -->
                         </li>
                         <li class="menu-item">
                             <span class="menu-expand"></span>
                             <a class="menu-link" href="#">Pages</a>
-                            <ul class="sub-menu">
+                            <!-- <ul class="sub-menu">
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="term-conditions.html">Term & Conditions </a></li>
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="privacy-policy.html">Privacy Policy</a></li>
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="shipping-return.html">Shipping & Return</a></li>
@@ -336,16 +344,16 @@
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="error.html">Error Page</a></li>
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="sign-in.html">Sign In</a></li>
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="sign-up.html">Sign Up</a></li>
-                            </ul>
+                            </ul> -->
                         </li>
                         <li class="menu-item"><a class="menu-link" href="about-us.html">about us</a></li>
                         <li class="menu-item">
                             <span class="menu-expand"></span>
                             <a class="menu-link" href="#">Blog</a>
-                            <ul class="sub-menu">
+                            <!-- <ul class="sub-menu">
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="blog.html">Blog Grid</a></li>
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="single-blog.html">Blog Single</a></li>
-                            </ul>
+                            </ul> -->
                         </li>
                         <li class="menu-item"><a class="menu-link" href="contact.html">Contact</a></li>
                         

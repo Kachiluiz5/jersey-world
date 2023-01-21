@@ -1,9 +1,3 @@
-<?php
-// include header.php file
- require_once('header.php');
- 
- ?>
-
         <!-- hero-section area start here  -->
         <div class="hero-section">
             <div class="hero-slider">
@@ -29,7 +23,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="signle-slide" style="background-image: url('');">
+
+
+
+                <!-- <div class="signle-slide" style="background-image: url('');">
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-lg-6 col-6">
@@ -49,8 +46,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="signle-slide" style="background-image: url('assets/images/hero-banner-bg-3.png');">
+                </div> -->
+
+
+                <!-- <div class="signle-slide" style="background-image: url('assets/images/hero-banner-bg-3.png');">
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-lg-6 col-6">
@@ -70,37 +69,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <!-- hero-section area end here  -->
-
-
-
-
-
-        
-        <?php 
-        //  Popular Categories area start here  
-        include('themeplate/_categories.php');
-
-        // featured product
-        include('themeplate/_featured.php');
-
-
-        // trending product
-
-        include('themeplate/_trendingproduct.php');
-
-        // about section
-
-         ?>
-      
-
-        <?php 
-        // including footer.php file
-        require_once('footer.php'); 
-
-        ?>
-
-      

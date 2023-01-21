@@ -13,7 +13,7 @@
 
 
         // featured product
-    include('themeplate/_featured.php');
+    include('themeplate/_top-sale.php');
 
 ?>
        

@@ -1,3 +1,11 @@
+<!--   product  -->
+<?php
+    $item_id = $_GET['item_id'] ?? 1;
+    foreach ($product->getData() as $item) :
+        if ($item['item_id'] == $item_id) :
+?>
+
+
 <!-- breadcrumb area start here  -->
 <div class="breadcrumb-area">
             <div class="container">
@@ -19,7 +27,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="product-single-left">
-                                <div class="product-thumbnail-image">
+                                <!-- <div class="product-thumbnail-image">
                                     <ul class="product-thumb-silide slider slider-nav">
                                         <li class="single-item"><img class="single-item-image" src="assets/images/single-product-image1.png" alt="product" /></li>
                                         <li class="single-item"><img class="single-item-image" src="assets/images/single-product-image2.png" alt="product" /></li>
@@ -27,25 +35,14 @@
                                         <li class="single-item"><img class="single-item-image" src="assets/images/single-product-image4.png" alt="product" /></li>
                                         <li class="single-item"><img class="single-item-image" src="assets/images/single-product-image2.png" alt="product" /></li>
                                     </ul>
-                                </div>
+                                </div> -->
                                 <div class="product-slier-big-image">
                                     <div class="product-priview-slide slider slider-for">
                                         <div class="single-slide">
-                                            <img class="slide-image" src="assets/images/single-product-image1.png" alt="product" />
+                                            <!-- <img class="slide-image" src="assets/images/single-product-image1.png" alt="product" /> -->
+                                            <img src="<?php echo $item['item_image'] ?? "./assets/products/1.png" ?>" alt="product" class="img-fluid">
                                         </div>
-                                        <div class="single-slide">
-                                            <img class="slide-image" src="assets/images/single-product-image2.png" alt="product" />
-                                        </div>
-                                        <div class="single-slide">
-                                            <img class="slide-image" src="assets/images/single-product-image3.png" alt="product" />
-                                        </div>
-                                        <div class="single-slide">
-                                            <img class="slide-image" src="assets/images/single-product-image4.png" alt="product" />
-                                        </div>
-                                        <div class="single-slide">
-                                            <img class="slide-image" src="assets/images/single-product-image2.png" alt="product" />
-                                        </div>
-                                       
+
                                     </div>
                                 </div>
                             </div>
@@ -53,8 +50,8 @@
                         <div class="col-lg-6">
                             <div class="product-single-right">
                                 <div class="product-info">
-                                    <h4 class="product-catagory">ELLA - HALOTHEMES</h4>
-                                    <h3 class="product-name">Plaid Cotton Oxford Shirt</h3>
+                                    <h4 class="product-catagory">Jersey</h4>
+                                    <h3 class="product-name"><?php echo $item['item_name'] ?? "Unknown"; ?></h3>
                                     <ul class="product-review">
                                         <li class="review-item active"><i class="flaticon-star"></i></li>
                                         <li class="review-item active"><i class="flaticon-star"></i></li>
@@ -65,7 +62,7 @@
 
                                     <div class="product-price">
                                         <span class="regular-price">$770.18</span>
-                                        <span class="price">$700.08</span>
+                                        <span class="price">$<?php echo $item['item_price'] ?? 0; ?></span>
                                     </div>
 
                                     <p class="note-text">Please note: We have this product in United States warehouse. If destination means you can receive the parcel faster and earlier than expected.</p>
@@ -278,3 +275,8 @@
             </div>
         </div>
         <!-- product-single-area end here  -->
+
+        <?php
+        endif;
+        endforeach;
+?>
