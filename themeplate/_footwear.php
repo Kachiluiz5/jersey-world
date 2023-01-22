@@ -94,11 +94,15 @@
                                  <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1'; ?>">
                                  <input type="hidden" name="user_id" value="<?php echo 1; ?>">
 
-                                 <!-- <a href="cart.html" title="Add to cart" class="add-cart">Add To Cart <i class="icon fas fa-plus-circle"></i></a>
-                                <a href="cart.html" type="submit" name="top_sale_submit" title="In the cart" disabled class="btn-success add-cart">In the Cart <i class="icon fas fa-plus-circle"></i></a> -->
+
                         
-                                 <button type="submit" disabled class="btn btn-success  add-cart" style="margin-bottom: 5px;">In the Cart </button>
-                                 <button type="submit" name="footwear_submit" class="btn btn-warning font-size-12 add-cart">Add to Cart </button>
+                             <?php
+                            if (in_array($item['item_id'], $Cart->getCartId($product->getData('cart')) ?? [])){
+                                echo '<button type="submit" disabled class="btn btn-success  add-cart" style="margin-bottom: 5px;">In the Cart </button>';
+                            }else{
+                                echo '<button type="submit" name="top_sale_submit" class="btn btn-warning font-size-12 add-cart">Add to Cart </button>';
+                            }
+                            ?>
 
                                 </form>
                             </div>

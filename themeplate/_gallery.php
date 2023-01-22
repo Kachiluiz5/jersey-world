@@ -6,7 +6,7 @@
                     <div class="col-lg-4 col-md-4">
                         <div class="section-header-area">
                             <h3 class="sub-title">Image Gallery</h3>
-                            <h2 class="section-title">Image Gallery To Zairito For Making Better Online Shopping Experience</h2>
+                            <h2 class="section-title">Image Gallery To jerseyworld  For Making Better Online Shopping Experience</h2>
                         </div>
                         
                         <div class="single-gallery">

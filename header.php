@@ -7,9 +7,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>jersey world collection</title>
-        <meta name="description" content="Zairito - eCommerce HTML Template" />
+        <meta name="description" content="jerseyworld  - eCommerce HTML Template" />
         <meta name="keywords" content="business,eCommerce, Ecommerce, ecommerce, shop, shopify, shopify ecommerce, creative, woocommerce, design, gallery, minimal, modern, html, html5, responsive" />
-        <meta name="author" content="Zairito" />
+        <meta name="author" content="jerseyworld " />
 
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -56,7 +56,7 @@
         <!-- Preloader Area Start -->
         <!-- <div id="preloader">
             <div id="status">
-                <img src="assets/images/preloader.svg" alt="img" />
+                <img src="assets/images/j.png" alt="img" style="width: 300px;" />
             </div>
         </div> -->
         <!-- Preloader Area End -->
@@ -109,7 +109,7 @@
                 <div class="container">
                     <div class="header-middle-wrap">
                         <div class="brand-area">
-                            <a class="brand-logo" href="index.php"><img class="brand-image" src="assets/images/j.png" alt="zairito" /></a>
+                            <a class="brand-logo" href="index.php"><img class="brand-image" src="assets/images/j.png" alt="jerseyworld" /></a>
                         </div>
                         <div class="search-area">
                             <form>
@@ -142,7 +142,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="compare single-btn">
+                            <!-- <div class="compare single-btn">
                                 <a href="compare.html" class="compare-btn header-btn">
                                     <div class="btn-left">
                                         <i class="btn-icon flaticon-bar-chart"></i>
@@ -153,7 +153,7 @@
                                         <span class="item-count">5 items</span>
                                     </div>
                                 </a>
-                            </div>
+                            </div> -->
                             <div class="cart single-btn">
                                 <a data-bs-toggle="offcanvas" href="#cartOffcanvasSidebar" role="button" aria-controls="cartOffcanvasSidebar" class="cart-btn header-btn">
                                     <div class="btn-left">
@@ -219,7 +219,7 @@
                             <a class="menu-link" href="#">Basketball Jerseys <i class="arrow-icon fas fa-angle-down"></i></a>
                             <!-- <ul class="sub-menu">
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="term-conditions.html">Term & Conditions</a></li>
-                                <li class="sub-menu-item"><a class="sub-menu-link" href="privacy-policy.html">Privacy Policy</a></li>
+                                <li class="sub-menu-item"><a class="sub-menu-link" href="privacy-policy.php">Privacy Policy</a></li>
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="shipping-return.html">Shipping & Return</a></li>
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="faq.html">Frequently Asked Questions</a></li>
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="refund-policy.html">Refund policy</a></li>
@@ -246,7 +246,7 @@
             <div class="container">
                 <div class="menu-wrap">
                     <div class="header-left">
-                        <a class="brand-logo" href="index.html"><img class="brand-image" src="assets/images/zairito.png" alt="zairito" /></a>
+                        <a class="brand-logo" href="index.html"><img class="brand-image" src="assets/images/jerseyworld .png" alt="jerseyworld " /></a>
                     </div>
                     <div class="header-right">
                         <a href="wish-list.html" class="wishlist-btn header-btn">
@@ -278,7 +278,7 @@
         <div class="offcanvas offcanvas-start menu-offcanvas" tabindex="-1" id="offcanvasMobileMenu">
             <div class="mobile-menu-area">
                 <div class="offcanvas-header">
-                    <a class="brand-logo" href="index.html"><img class="brand-image" src="assets/images/zairito.png" alt="zairito" /></a>
+                    <a class="brand-logo" href="index.html"><img class="brand-image" src="assets/images/jerseyworld .png" alt="jerseyworld " /></a>
                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="menu-search-form">
@@ -337,7 +337,7 @@
                             <a class="menu-link" href="#">Pages</a>
                             <!-- <ul class="sub-menu">
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="term-conditions.html">Term & Conditions </a></li>
-                                <li class="sub-menu-item"><a class="sub-menu-link" href="privacy-policy.html">Privacy Policy</a></li>
+                                <li class="sub-menu-item"><a class="sub-menu-link" href="privacy-policy.php">Privacy Policy</a></li>
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="shipping-return.html">Shipping & Return</a></li>
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="faq.html">Frequently Asked Questions</a></li>
                                 <li class="sub-menu-item"><a class="sub-menu-link" href="refund-policy.html">Refund policy</a></li>

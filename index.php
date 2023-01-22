@@ -13,20 +13,15 @@
         include('themeplate/_categories.php');
 
         // featured product
-        include('themeplate/_top-sale.php');
+        include('Template/_top-sale.php');
 
+         // featured product
+         include('Template/_special-price.php');
 
-        // trending product
-
-        include('themeplate/_trendingproduct.php');
-
-        // about section
-
-           // footwear
-
-           include('themeplate/_footwear.php');
 
     ?>
+
+    <br><br><br><br><br>
       
 
 <?php 

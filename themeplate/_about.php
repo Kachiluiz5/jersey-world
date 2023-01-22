@@ -5,7 +5,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <h3 class="sub-title">About Us</h3>
-                            <h2 class="section-title">The Story Of Borning <br /> Company Zairito</h2>
+                            <h2 class="section-title">The Story Of Borning <br /> Company jerseyworld </h2>
                         </div>
                         <div class="col-md-6 align-self-end text-md-end">
                             <a href="about-us.html" class="primary-btn">Know More Abou Us</a>

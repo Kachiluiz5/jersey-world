@@ -38,7 +38,7 @@
                             <input type="hidden" name="user_id" value="<?php echo 1; ?>">
                         
                             <button type="submit" disabled class="btn btn-success font-size-12">In the Cart</button>
-                            <button type="submit" name="top_sale_submit" class="btn btn-warning font-size-12">Add to Cart</button>
+                            <button type="submit" name="top_sale_submit" class=" btn-warning font-size-12 add-cart" >Add to Cart</button>
 
                         </form>
                     </div>

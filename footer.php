@@ -5,11 +5,11 @@
                     <div class="row">
                         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4">
                             <div class="single-widget about-widget">
-                                <a href="index.html" class="footer-brand-logo mb-25"><img src="assets/images/j" alt="footer-logo" /></a>
+                                <a href="index.html" class="footer-brand-logo mb-25"><img src="assets/images/j.png" alt="footer-logo" /></a>
                                 <p class="address-text">685 Market Street <br /> San Francisco, CA 94105, <br />United States</p>
                                 <div class="block-content mb-30">
-                                    <p class="contact">Call us: 1.800.000.6690</p>
-                                    <p class="contact">Email: support@zainikthemes.com</p>
+                                    <p class="contact">Call us: </p>
+                                    <p class="contact">Email: </p>
                                 </div>
                                 <ul class="social-media">
                                     <li class="social-media-item"><a class="social-media-link" href="javascript:void(0)"><i class="fab fa-facebook-f"></i></a></li>
@@ -26,12 +26,11 @@
                                     <div class="single-widget">
                                         <h3 class="widget-title">Shop by</h3>
                                         <ul class="widget-menu show">
-                                            <li class="menu-item"><a class="menu-link" href="shop-grid-left-sidebar.html">Appliances</a></li>
+                                            <li class="menu-item"><a class="menu-link" href="shop-grid-left-sidebar.html">Jersey</a></li>
                                             <li class="menu-item"><a class="menu-link" href="shop-grid-right-sidebar.html">Computers & Laptops</a></li>
-                                            <li class="menu-item"><a class="menu-link" href="shop-grid.html">Cameras</a></li>
-                                            <li class="menu-item"><a class="menu-link" href="shop-list.html">Mobile Phones</a></li>
-                                            <li class="menu-item"><a class="menu-link" href="shop-list-right-sidebar.html">Televisions</a></li>
-                                            <li class="menu-item"><a class="menu-link" href="shop-list-left-sidebar.html">Video Games</a></li>
+                                            <li class="menu-item"><a class="menu-link" href="shop-grid.html">Basket ball</a></li>
+                                            <li class="menu-item"><a class="menu-link" href="shop-list.html">Boot</a></li>
+                                        
                                         </ul>
                                     </div>
                                 </div>
@@ -54,7 +53,7 @@
                                         <ul class="widget-menu">
                                             <li class="menu-item"><a class="menu-link" href="faq.html">Help & FAQs</a></li>
                                             <li class="menu-item"><a class="menu-link" href="term-conditions.html">Terms of Conditions</a></li>
-                                            <li class="menu-item"><a class="menu-link" href="privacy-policy.html">Privacy Policy</a></li>
+                                            <li class="menu-item"><a class="menu-link" href="privacy-policy.php">Privacy Policy</a></li>
                                             <li class="menu-item"><a class="menu-link" href="refund-policy.html">Online Returns Policy</a></li>
                                             <li class="menu-item"><a class="menu-link" href="shipping-return.html">Shipping & Return</a></li>
                                             <li class="menu-item"><a class="menu-link" href="contact.html">Contact us</a></li>
@@ -107,9 +106,9 @@
                              <div class="row">
                                  <div class="col-lg-7 col-md-12">
                                     <div class="offer_modal_left">
-                                        <img src="assets/images/zairito.png" alt="logo">
+                                        <img src="assets/images/jerseyworld .png" alt="logo">
                                         <h3>SUBSCRIBE TO NEWSLETTER</h3>
-                                        <p class="m-0">Subscribe to the Zairito mailing list to receive updates
+                                        <p class="m-0">Subscribe to the jerseyworld  mailing list to receive updates
                                             on new arrivals, special offers and our promotions.</p>
                                         <form>
                                             <div class="input-group mb-3">
@@ -163,7 +162,6 @@
 
 <!-- Custom Javascript -->
 <script src="index.js"></script>
-    </body>
-
+</body>
 </html>
         <!-- footer area end here -->

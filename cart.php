@@ -1,4 +1,6 @@
 <?php
+ ob_start();
+
 // include header.php file
  require_once('header.php');
  
@@ -10,14 +12,15 @@
     //    products include
     include('themeplate/_cart-themeplate.php');
 
+    // wishlist template
 
+    include('Template/_wishilist_template.php');
+ 
+    // featured product
+    // include('themeplate/_top-sale.php');
 
-        // featured product
-    include('themeplate/_top-sale.php');
-
+ 
 ?>
-       
-
   
 
 <?php 
