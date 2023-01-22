@@ -16,8 +16,6 @@
 
     include('Template/_wishilist_template.php');
  
-    // featured product
-    // include('themeplate/_top-sale.php');
 
  
 ?>

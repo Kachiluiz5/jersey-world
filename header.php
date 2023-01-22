@@ -99,7 +99,7 @@
                                     </ul>
                                 </div>
                             </div> -->
-                            <!-- <a class="account-btn" href="sign-in.html"><i class="user-icon flaticon-user"></i> My Account </a> -->
+                            <a class="account-btn" href="sign-in.php"><i class="user-icon flaticon-user"></i> My Account </a>
                         </div>
                     </div>
                     </div>
@@ -116,11 +116,11 @@
                                 <div class="search-wrap">
                                     <select class="form-select">
                                         <option selected>Category</option>
-                                        <option value="1">Health & Beauty</option>
-                                        <option value="2">Women's Fashion</option>
-                                        <option value="3">Men's Fashion</option>
-                                        <option value="4">Electronic</option>
-                                        <option value="5">Sports </option>
+                                        <option value="1">Jerseys</option>
+                                        <option value="2">Sports Gears</option>
+                                        <option value="3"> Kits</option>
+                                        <option value="4">Football boots</option>
+                                        <option value="5">Sportswears </option>
                                     </select>
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="search" name="search" placeholder="Search Here" />

@@ -122,20 +122,6 @@
                                         <!-- <td><button class="delet-btn" title="Delete Item"><img src="assets/images/close.svg" alt="close" /></button></td> -->
                                     </tr>
 
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
     
                                 </tbody>
                                 <?php
