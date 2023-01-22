@@ -12,8 +12,8 @@
 
 
 
-        // featured product
-    include('Template/_special-price.php');
+    /*  include top sale section */
+    include ('Template/_top-sale.php');
 
 ?>
        
