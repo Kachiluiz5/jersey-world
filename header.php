@@ -134,7 +134,7 @@
                                     </div>
                                     <div class="btn-right">
                                         <span class="btn-text">Your Cart</span>
-                                        <span class="price"><?php echo isset($subTotal) ? $Cart->getSum($subTotal) : 0; ?></span>
+                                        <span class="price"><?php echo isset($subTotal) ? $Cart->getSum($subTotal) : ""; ?></span>
                                     </div>
                                 </a>
                             </div>

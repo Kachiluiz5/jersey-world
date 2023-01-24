@@ -42,7 +42,7 @@
                                         <th scope="col">Product Name</th>
                                         <th scope="col">Price</th>
                                         <th scope="col">Quantity</th>
-                                        <th scope="col">Total</th>
+                                        <!-- <th scope="col">Total</th> -->
                                         <th scope="col">Remove</th>
                                     </tr>
                                 </thead>
@@ -53,7 +53,7 @@
                                   $cart = $product->getProduct($item['item_id']);
                                     $subTotal[] = array_map(function ($item){
                                      ?>
-                                    <tr class="cart-page-item">
+                                <tr class="cart-page-item">
                                         <td>
                                             <div class="single-grid-product m-0">
                                                 <div class="product-top">
@@ -65,7 +65,7 @@
                                                 </div>
                                                 <div class="product-info text-center">
                                                     <h4 class="product-catagory">jersey</h4>
-                                                    <h3 class="product-name"><a class="product-link" href="single-product.html"><?php echo $item['item_name'] ?? "Unknown"; ?></a></h3>
+                                                    <h3 class="product-name"><a class="product-link" href="<?php printf('%s?item_id=%s', 'product.php',  $item['item_id']); ?>"><?php echo $item['item_name'] ?? "Unknown"; ?></a></h3>
                                                     <ul class="product-review">
                                                         <li class="review-item active"><i class="flaticon-star"></i></li>
                                                         <li class="review-item active"><i class="flaticon-star"></i></li>
@@ -93,36 +93,41 @@
                                         </label>
                                     </div>
                                 </div>
-                                                </div>
-                                            </div>
+                                </div>
+                                </div>
+                                
                                         </td>
                                         <td>
                                             <div class="product-price text-center">
-                                                <h4 class="regular-price">$220.88</h4>
-                                                <h3 class="price"data-id="<?php echo $item['item_id'] ?? '0'; ?>"><?php echo $item['item_price'] ?? 0; ?></h3>
+                                                <!-- <h4 class="regular-price">$220.88</h4> -->
+                                                <h3> $<span class="product_price" data-id="<?php echo $item['item_id'] ?? '0'; ?>"><?php echo $item['item_price'] ?? 0; ?></span></h3>
+                                            
                                             </div>
+                                            
                                         </td>
+                                        
                                         <td>
                                             <div class="cart-quantity input-group">
-                                            <button class="qty-up border bg-light" data-id="<?php echo $item['item_id'] ?? '0'; ?>"><i class="fas fa-angle-up"></i></button>
-                                            <input type="text" data-id="<?php echo $item['item_id'] ?? '0'; ?>" class="qty_input border px-2 w-100 bg-light" disabled value="1" placeholder="1">
-                                            <button data-id="<?php echo $item['item_id'] ?? '0'; ?>" class="qty-down border bg-light"><i class="fas fa-angle-down"></i></button>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <h1 class="cart-table-item-total">$278.58</h1>
+                                            
+                                
+                                
+
+                                        <div class=" qty d-flex  w-55">
+                                          <button class="qty-up border bg-light" data-id="<?php echo $item['item_id'] ?? '0'; ?>"><i class="fas fa-angle-up"></i></button>
+                                          <input type="text" data-id="<?php echo $item['item_id'] ?? '0'; ?>" class="qty_input border px-2 w-100 bg-light" disabled value="1" placeholder="1">
+                                          <button data-id="<?php echo $item['item_id'] ?? '0'; ?>" class="qty-down border bg-light"><i class="fas fa-angle-down"></i></button>
+                                        </div>
+                                    
                                         </td>
 
+                                        <!-- CONCELING PRODUCT -->
                                         <form method="post">
                                           <input type="hidden" value="<?php echo $item['item_id'] ?? 0; ?>" name="item_id">
-                                          <!-- <button type="submit" name="delete-cart-submit" class="btn font-baloo text-danger px-3 border-right">Delete</button> -->
                                           <td><button type="submit" name="delete-cart-submit" class="delet-btn" title="Delete Item"><img src="assets/images/close.svg" alt="close" /></button></td>
                                         </form>
+                                        <!--! CONSELLING PRODUCT  -->
+                                </tr>
 
-                                        <!-- <td><button class="delet-btn" title="Delete Item"><img src="assets/images/close.svg" alt="close" /></button></td> -->
-                                    </tr>
-
-    
                                 </tbody>
                                 <?php
                             return $item['item_price'];
@@ -190,17 +195,17 @@
                                 <h2 class="bottom-box-title m-0">$<?php echo isset($subTotal) ? $Cart->getSum($subTotal) : 0; ?></h2>
                             </div>
 
-                            <div class="sub-total-inner-box d-flex justify-content-between align-items-center">
+                            <!-- <div class="sub-total-inner-box d-flex justify-content-between align-items-center">
                                 <div class="cart-inner-shipping-title">
                                     <span>Shipping</span>
                                     <p class="shipping-state m-0">Shipping to United States</p>
                                 </div>
                                 <h2 class="bottom-box-title m-0">$25.00</h2>
-                            </div>
+                            </div> -->
 
                             <div class="sub-total-inner-box d-flex justify-content-between align-items-center">
-                                <h2 class="bottom-box-title m-0">Total</h2>
-                                <h2 class="bottom-box-title cart-page-final-total m-0">$567.00</h2>
+                            <h2 class="">Total ( <?php echo isset($subTotal) ? count($subTotal) : 0; ?> item):&nbsp; <span class="text-danger">$<span class="text-danger" id="deal-price">
+                            <?php echo isset($subTotal) ? $Cart->getSum($subTotal) : 0; ?></span> </span> </h2>
                             </div>
                                 
                             <div class="form-button text-center">

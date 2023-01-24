@@ -110,8 +110,16 @@
                                         <a class="addToWishlist product-btn" href="compare.html" title="Add to compare"><i class="icon flaticon-bar-chart"></i></a>
                                     </div>
                                     <div class="product-bottom-button d-flex">
-                                        <a href="checkout.html" class="primary-btn">Buy Now</a>
-                                        <a href="cart.html" title="Add to cart" class="add-cart">Add To Cart <i class="icon fas fa-plus-circle"></i></a>
+
+                                    <?php
+                        if (in_array($item['item_id'], $Cart->getCartId($product->getData('cart')) ?? [])){
+                            echo '<button type="submit" disabled class="add-cart btn-success ">In the Cart</button>';
+                        }else{
+                            echo '<button type="submit" name="top_sale_submit" class="add-cart btn-warning ">Add to Cart</button>';
+                        }
+                        ?>
+                                        <!-- <a href="checkout.html" class="primary-btn">Buy Now</a> -->
+                                        <!-- <a href="cart.html" title="Add to cart" class="add-cart">Add To Cart <i class="icon fas fa-plus-circle"></i></a> -->
                                     </div>
                                 </div>
                                 <div class="product-right-bottom">
