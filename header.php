@@ -82,7 +82,7 @@
                                 </ul>
                             </div>
 
-                            <a class="account-btn" href="sign-in.php"><i class="user-icon flaticon-user"></i> My Account </a>
+                            <a class="account-btn" href="login.php"><i class="user-icon flaticon-user"></i> My Account </a>
                         </div>
                     </div>
                     </div>

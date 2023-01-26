@@ -13,10 +13,11 @@
         include('themeplate/_categories.php');
 
         // featured product
-        include('Template/_top-sale.php');
+        // include('Template/_top-sale.php');
+        include('themeplate/trail.php');
 
          // featured product
-         include('Template/_special-price.php');
+        //  include('Template/_special-price.php');
 
 
     ?>

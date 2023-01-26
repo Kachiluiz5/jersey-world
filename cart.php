@@ -10,11 +10,12 @@
 <?php 
 
     //    products include
-    include('themeplate/_cart-themeplate.php');
+    // include('themeplate/_cart-themeplate.php');
+    count($product->getData('cart')) ? include ('themeplate/_cart-themeplate.php') :  include ('Template/notFound/_cart_notFound.php');
 
     // wishlist template
 
-    include('Template/_wishilist_template.php');
+    count($product->getData('wishlist')) ? include ('themeplate/_wishlist-template.php') :  include ('themeplate/_empty-wishlist.php');
  
 
  

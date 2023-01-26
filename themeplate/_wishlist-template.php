@@ -12,72 +12,124 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 ?>
 
 <section id="cart" class="py-3 mb-5">
-    <div class="container-fluid w-75">
-        <h5 class="font-baloo font-size-20">Wishlist</h5>
+        <!-- wish-list area start here  -->
+        <div class="wish-list-area section">
+            <div class="container">
+                <div class="row">
+                    
+                <div class="col-12 wish-list-table">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                              <tr>
+                                <th scope="col">Image</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Action</th>
+                                <th scope="col">Remove</th>
+                              </tr>
+                            </thead>
+                            <tbody>
 
-        <!--  shopping cart items   -->
-        <div class="row">
-            <div class="col-sm-9">
-                <?php
+                                <tr>
+                                <?php
                 foreach ($product->getData('wishlist') as $item) :
                     $cart = $product->getProduct($item['item_id']);
                     $subTotal[] = array_map(function ($item){
                         ?>
-                        <!-- cart item -->
-                        <div class="row border-top py-3 mt-3">
-                            <div class="col-sm-2">
-                                <img src="<?php echo $item['item_image'] ?? "./assets/products/1.png" ?>" style="height: 120px;" alt="cart1" class="img-fluid">
-                            </div>
-                            <div class="col-sm-8">
-                                <h5 class="font-baloo font-size-20"><?php echo $item['item_name'] ?? "Unknown"; ?></h5>
-                                <small>by <?php echo $item['item_brand'] ?? "Brand"; ?></small>
-                                <!-- product rating -->
-                                <div class="d-flex">
-                                    <div class="rating text-warning font-size-12">
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="fas fa-star"></i></span>
-                                        <span><i class="far fa-star"></i></span>
-                                    </div>
-                                    <a href="#" class="px-2 font-rale font-size-14">20,534 ratings</a>
-                                </div>
-                                <!--  !product rating-->
+                                    <td>
+                                        <div class="product-image">
+                                        <a href="<?php printf('%s?item_id=%s', 'product.php',  $item['item_id']); ?>"><img src="<?php echo $item['item_image'] ?? "./assets/products/1.png"; ?>" alt="product1" class="img-fluid"></a>
+                                            <div class="product-flags">
+                                                <span class="product-flag sale">SALE</span>
+                                                <span class="product-flag discount">-15%</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="product-info text-center">
+                                            <h4 class="product-catagory">jersey</h4>
+                                            <h3 class="product-name"><a class="product-link" href="single-product.html"><?php echo  $item['item_name'] ?? "Unknown";  ?></a></h3>
+                                            <ul class="product-review">
+                                                <li class="review-item active"><i class="flaticon-star"></i></li>
+                                                <li class="review-item active"><i class="flaticon-star"></i></li>
+                                                <li class="review-item active"><i class="flaticon-star"></i></li>
+                                                <li class="review-item"><i class="flaticon-star"></i></li>
+                                                <li class="review-item"><i class="flaticon-star"></i></li>
+                                            </ul>
+                                            <div class="variable-single-item color-switch">
+                                                <div class="product-variable-color">
+                                                    <label>
+                                                        <input name="modal-product-color"
+                                                            class="color-select" type="radio" checked="">
+                                                        <span class="product-color-black"></span>
+                                                    </label>
+                                                    <label>
+                                                        <input name="modal-product-color"
+                                                            class="color-select" type="radio">
+                                                        <span class="product-color-tomato"></span>
+                                                    </label>
+                
+                                                    <label>
+                                                        <input name="modal-product-color"
+                                                            class="color-select" type="radio">
+                                                        <span class="product-color-gray"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="product-price text-center">
+                                            <h4 class="regular-price">$220.88</h4>
+                                            <span class="price">$<?php echo $item['item_price'] ?? '0' ; ?></span>
+                                        </div>
+                                    </td>
 
-                                <!-- product qty -->
-                                <div class="qty d-flex pt-2">
+                                    <td>
+                                        <div class="action-area">
+                                        <form method="post">
+                                           <input type="hidden" value="<?php echo $item['item_id'] ?? 0; ?>" name="item_id">
+                                           <button type="submit" name="cart-submit" class="add-cart action-btn">Add to Cart<i class="icon fas fa-plus-circle"></i></button>
+                                        </form>
+                                            <!-- <a href="cart.html" title="Add to cart" class="add-cart action-btn">Add To Cart <i class="icon fas fa-plus-circle"></i></a> -->
+                                            <!-- <a class="buy-btn action-btn mt-15" href="checkout.html">Buy Now</a> -->
+                                        </div>
+                                    </td>
 
+                                    <td>
                                     <form method="post">
                                         <input type="hidden" value="<?php echo $item['item_id'] ?? 0; ?>" name="item_id">
-                                        <button type="submit" name="delete-cart-submit" class="btn font-baloo text-danger pl-0 pr-3 border-right">Delete</button>
+                                        <button type="submit" name="delete-cart-submit" class="delet-btn"><img src="assets/images/close.svg" alt="close" /></button>
                                     </form>
-
-                                    <form method="post">
-                                        <input type="hidden" value="<?php echo $item['item_id'] ?? 0; ?>" name="item_id">
-                                        <button type="submit" name="cart-submit" class="btn font-baloo text-danger">Add to Cart</button>
-                                    </form>
-
-
-                                </div>
-                                <!-- !product qty -->
-
-                            </div>
-
-                            <div class="col-sm-2 text-right">
-                                <div class="font-size-20 text-danger font-baloo">
-                                    $<span class="product_price" data-id="<?php echo $item['item_id'] ?? '0'; ?>"><?php echo $item['item_price'] ?? 0; ?></span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- !cart item -->
-                        <?php
+                                        
+                                    </td>
+                                    <?php
                         return $item['item_price'];
                     }, $cart); // closing array_map function
                 endforeach;
                 ?>
+                                </tr>
+
+
+
+
+
+
+
+
+
+                                
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                </div>
             </div>
         </div>
-        <!--  !shopping cart items   -->
-    </div>
+        <!-- wish-list area end here  -->
+
 </section>
 <!-- !Shopping cart section  -->
