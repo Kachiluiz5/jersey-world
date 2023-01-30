@@ -1,12 +1,12 @@
 <!-- Shopping cart section  -->
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-    if (isset($_POST['delete-cart-submit'])){
+    if (isset($_POST['delete-wishlist-submit'])){
         $deletedrecord = $Cart->deleteCart($_POST['item_id']);
     }
 
-    if(isset($_POST['cart-submit'])){
-        $Cart->saveForLater($_POST['item_id'], 'cart', 'wishlist');
+    if(isset($_POST['wishlist-submit'])){
+        $wishlist->saveForLater($_POST['item_id'], 'cart', 'wishlist');
     }
 }
 ?>
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                                 <tr>
                                 <?php
                 foreach ($product->getData('wishlist') as $item) :
-                    $cart = $product->getProduct($item['item_id']);
+                    $wishlist = $product->getProduct($item['item_id']);
                     $subTotal[] = array_map(function ($item){
                         ?>
                                     <td>
@@ -106,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                                     </td>
                                     <?php
                         return $item['item_price'];
-                    }, $cart); // closing array_map function
+                    }, $wishlist); // closing array_map function
                 endforeach;
                 ?>
                                 </tr>

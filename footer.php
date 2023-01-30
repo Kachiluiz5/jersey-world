@@ -86,7 +86,7 @@
             <div class="footer-bottom">
                 <div class="container-fluid">
                     <div class="footer-bottom-wrap">
-                        <p class="copyright-text">Designed And Developed By Team <a class="brand-name" href="#">Zainiktheme</a> Digital Agency @2021</p>
+                        <p class="copyright-text">Designed And Developed By Team <a class="brand-name" href="bremwave.business.site">Bremwave</a> Digital Agency</p>
                     </div>
                 </div>
             </div>

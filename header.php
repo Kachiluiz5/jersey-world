@@ -97,14 +97,14 @@
                         <div class="search-area">
                             <form>
                                 <div class="search-wrap">
-                                    <select class="form-select">
+                                    <!-- <select class="form-select">
                                         <option selected>Category</option>
                                         <option value="1">Jerseys</option>
                                         <option value="2">Sports Gears</option>
                                         <option value="3"> Kits</option>
                                         <option value="4">Football boots</option>
                                         <option value="5">Sportswears </option>
-                                    </select>
+                                    </select> -->
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="search" name="search" placeholder="Search Here" />
                                         <button type="button" class="search-btn"><i class="flaticon-search"></i></button>
@@ -114,14 +114,14 @@
                         </div>
                         <div class="header-right">
                             <div class="wishlist single-btn">
-                                <a href="wish-list.html" class="wishlist-btn header-btn">
+                                <a href="#" class="wishlist-btn header-btn">
                                     <div class="btn-left">
                                         <i class="btn-icon flaticon-like"></i>
-                                        <span class="count">12</span>
+                                        <span class="count"><?php echo count($product->getData('wishlist')); ?></span>
                                     </div>
                                     <div class="btn-right">
                                         <span class="btn-text">Wishlist</span>
-                                        <span class="item-count">12 items</span>
+                                        <!-- <span class="item-count">12 items</span> -->
                                     </div>
                                 </a>
                             </div>

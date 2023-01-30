@@ -209,7 +209,7 @@
                             </div>
                                 
                             <div class="form-button text-center">
-                                <a href="checkout.html" class="form-btn proceed-to-checkout-btn">Proceed To Cheeckout</a>
+                                <a href="checkout.html" class="form-btn proceed-to-checkout-btn">Place an Order</a>
                             </div>
                         </div>
                     </div>

@@ -1,16 +1,28 @@
-<!-- Top Sale -->
+<!-- Special Price -->
 <?php
-
+    $brand = array_map(function ($pro){ return $pro['item_brand']; }, $product_shuffle);
+    $unique = array_unique($brand);
+    sort($unique);
     shuffle($product_shuffle);
 
-    // request method post
-    if($_SERVER['REQUEST_METHOD'] == "POST"){
-        if (isset($_POST['top_sale_submit'])){
-            // call method addToCart
-            $Cart->addToCart($_POST['user_id'], $_POST['item_id']);
-        }
+// request method post
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+    if (isset($_POST['top_sale_submit'])){
+        // call method addToCart
+        $Cart->addToCart($_POST['user_id'], $_POST['item_id']);
     }
-?> 
+}
+
+
+        // save for later
+        if (isset($_POST['wishlist-submit'])){
+            $Cart->saveForLater($_POST['item_id']);
+        }
+
+
+$in_cart = $Cart->getCartId($product->getData('cart'));
+
+?>
  
  
  <!-- Featured Products area start here  -->
@@ -31,7 +43,7 @@
                 <div class="row">
 
 
-                <?php foreach ($product_shuffle as $item) { ?>
+                <?php array_map(function ($item) use($in_cart){ ?>
                     <div class="col-lg-3 col-md-4 col-sm-6">
                     
                         <div class="single-grid-product">
@@ -103,12 +115,14 @@
                                 <input type="hidden" name="user_id" value="<?php echo 1; ?>">
                                 <?php
                                 if (in_array($item['item_id'], $in_cart ?? [])){
-                                    echo '<button type="submit" disabled class="add-cart btn-success ">In the Cart</button>';
+                                    echo '<button type="submit"  class="add-cart  btn-success ">In the Cart</button>';
                                 }else{
-                                    echo '<button type="submit" name="top_sale_submit" class="add-cart btn-warning  ">Add to Cart</button>';
+                                    echo '<button type="submit" name="top_sale_submit" class="add-cart action-btn btn-warning  ">Add to Cart</button>';
                                 }
                                 ?>
                                 </form>
+
+
                                
                                 
                             </div>
@@ -130,7 +144,7 @@
 
 
 
-                    <?php } // closing foreach function ?>
+                    <?php }, $product_shuffle) ?>
                 </div>
             </div>
         </div>

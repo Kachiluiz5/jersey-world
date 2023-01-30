@@ -11,7 +11,7 @@
 
     //    products include
     // include('themeplate/_cart-themeplate.php');
-    count($product->getData('cart')) ? include ('themeplate/_cart-themeplate.php') :  include ('Template/notFound/_cart_notFound.php');
+    count($product->getData('cart')) ? include ('themeplate/_cart-themeplate.php') :  include ('themeplate/_cart_notFound.php');
 
     // wishlist template
 
