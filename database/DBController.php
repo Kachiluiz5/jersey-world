@@ -41,6 +41,11 @@ class DBController
         }
     }
 
+    
+
 }
+
+$db_handle = new DBController();
+$con = $db_handle->con;
 
 

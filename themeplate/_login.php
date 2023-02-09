@@ -1,89 +1,37 @@
-<?php  
+<?php
+  $errornotice ="";
+
+if(isset($_POST ['login'])){
+  $email = $_POST ['email'];
+  $password = $_POST ['password'];
+  $insert = "";
+
+  $sql = "SELECT  user_id,  email, password from user where   email =? AND password =?";
+
+ 
+  $data = $con->prepare($sql);
+  $data ->bind_param("ss",$email,$password);
+  $data -> execute();
+  $data -> bind_result($id, $dbemail, $dbpassword);
+
+  while ($data-> fetch()):
+  $insert = "correct";
+  $_SESSION['begin'] = $id;
+  endwhile;
+
+       if ($insert !="correct"){
+          $errornotice ="invalid username,email or password ";
+        }
 
 
-function redirectToCartPage(){
-  header('Location: cart.php?LoginSuccess');
-  exit();
-}
+       if($insert == "correct"){
 
-function redirectToLoginPage(){
-  header('Location: index.php?LoginSuccess');
-  exit();
-}
-// if (isset($_SESSION['email'])) {
-//   # code...
-//   redirectToLoginPage();
-// }
-$msg = '';
-if (isset($_POST['submit'])) {
-
-    include("database/DBController.php");
-  # code...
-  $email = mysqli_real_escape_string($con, $_POST['email']);
-  $password = mysqli_real_escape_string($con, $_POST['password']);
-  if ($email == "" || $password == "") 
-    # code...
-    $msg = "<div class='alert alert-danger alert-dismissible'>
-   <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>Email or Password can not be empty!</div>";
-  else{
-    $sql = $con->query("SELECT id, password, Email_Status FROM users WHERE email = '$email'");
-    if ($sql->num_rows > 0) {
-      # code...
-      $data = $sql->fetch_array();
-      if (password_verify($password, $data['password'])) {
-        # code...
-        if ($data['Email_Status'] == 0) {
-  //         # code...
-  //         $msg = "<div class='alert alert-danger alert-dismissible'>
-  //  <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>Please verify your email address to activate your account</div>";     
-  //  else {
-  //    if (!empty($_POST['remember_me'])) {
-  //      # code...
-  //     setcookie("email", $email, time()+30*24*60*60);
-  //     setcookie("password", $password, time()+30*24*60*60);
-
-     }
-      else {
-       setcookie("email", "");
-      setcookie("password", "");
-     }
-     //include seession user here
-     $_SESSION['email'] = $email;
-     if ($_GET['user_with_product'] == "shopping_cart-product_listsD2jLe9oeAvSMSrzHQBYhe.PN2qbSugNxHD/8f5dp1gDSYXrYEIPja") {
-       
-     //log user to checkout page
-     redirectToCartPage();
-     
-     }
-     else{
-       //log user to index page
-     redirectToLoginPage();
-     }
-    
-
-   }   
-
-      }
-
-else 
-  $msg = "<div class='alert alert-danger alert-dismissible'>
-   <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>You Entered Wrong Email or Password!</div>";  
+        header("location:cart.php");
 
 
-    }
-// else {
-//  $msg = "<div class='alert alert-danger alert-dismissible'>
-//    <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>You Entered Wrong Email or Password! Please check your inputs</div>"; 
-
-// }
-
-  }
-
-// }
+}}
 
 ?>
-
-
 
 
 
@@ -99,15 +47,15 @@ else
                                 <span class="far fa-user"></span>
                             </div>
                             <h1 class="text-center mb-4">Sign In</h1>
-                            <form class="login-form">
+                            <form class="login-form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
                                 <div class="form-group">
-                                    <input type="text" class="form-control rounded-left" placeholder="Username" required="">
+                                    <input type="email" class="form-control rounded-left" placeholder="Enail" name="email" id="email" required>
                                 </div>
                                 <div class="form-group d-flex">
-                                    <input type="password" class="form-control rounded-left" placeholder="Password" required="">
+                                    <input type="password" class="form-control rounded-left" placeholder="Password" name="password" required>
                                 </div>
                                 <div class="form-group">
-                                    <button type="button" class="form-control btn btn-primary rounded submit px-3 primary-btn">Login</button>
+                                    <button type="submit" name="login" class="form-control btn btn-primary rounded submit px-3 primary-btn">Login</button>
                                 </div>
                                 <div class="remember-box form-group d-md-flex justify-content-between mb-0">
                                     <div>

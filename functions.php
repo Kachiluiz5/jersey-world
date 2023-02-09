@@ -23,5 +23,6 @@
 
 // Cart object
 $Cart = new Cart($db );
+// $wishlist = new Wishlist($db);
 
 

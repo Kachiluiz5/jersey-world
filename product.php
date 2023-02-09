@@ -13,7 +13,7 @@
 
 
     /*  include top sale section */
-    include ('Template/_top-sale.php');
+    // include ('themeplate/_top-sale.php');
 
 ?>
        

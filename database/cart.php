@@ -97,4 +97,16 @@ class Cart
     }
 
 
+    // delete wishlist item using cart item id
+    public function deleteWishlist($item_id = null, $table = 'wishlist'){
+        if($item_id != null){
+            $result = $this->db->con->query("DELETE FROM {$table} WHERE item_id={$item_id}");
+            if($result){
+                header("Location:" . $_SERVER['PHP_SELF']);
+            }
+            return $result;
+        }
+    }
+
+
 }

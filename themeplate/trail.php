@@ -1,4 +1,7 @@
 <!-- Special Price -->
+
+
+
 <?php
     $brand = array_map(function ($pro){ return $pro['item_brand']; }, $product_shuffle);
     $unique = array_unique($brand);
@@ -11,13 +14,17 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         // call method addToCart
         $Cart->addToCart($_POST['user_id'], $_POST['item_id']);
     }
+
+            // save for later
+    if (isset($_POST['wishlist-submit'])){
+        $Cart->saveForLater($_POST['item_id']);
+    }
+
+    
 }
 
 
-        // save for later
-        if (isset($_POST['wishlist-submit'])){
-            $Cart->saveForLater($_POST['item_id']);
-        }
+
 
 
 $in_cart = $Cart->getCartId($product->getData('cart'));
@@ -51,37 +58,25 @@ $in_cart = $Cart->getCartId($product->getData('cart'));
                             <div class="product-top">
                             
                             <a href="<?php printf('%s?item_id=%s', 'product.php',  $item['item_id']); ?>"><img src="<?php echo $item['item_image'] ?? "./assets/products/1.png"; ?>" alt="product1" ></a>
-                                <ul class="prdouct-btn-wrapper">
-                                    <li class="single-product-btn">
-                                        <a class="addToWishlist product-btn" href="compare.html" title="Add to compare"><i class="icon flaticon-bar-chart"></i></a>
-                                    </li>
-                                    <li class="single-product-btn">
-                                        <!-- <a class="addCompare product-btn" href="wish-list.html" title="Add to wishlist"><i class="icon flaticon-like"></i></a> -->
 
-                                        <form method="post">
-                                        <input type="hidden" value="<?php echo $item['item_id'] ?? 0; ?>" name="item_id">
-                                        <button type="submit" name="wishlist-submit" class="addCompare product-btn"><i class="icon flaticon-like"></i></button>
-                                        </form>
-                                    </li>
-                                </ul>
                             </div>
 
 
                             <div class="product-info text-center">
-                                <h4 class="product-catagory">jersey</h4>
+                                <h4 class="product-catagory"><?php echo $item['item_cat'] ?? "Unknown"; ?></h4>
                                 <h3 class="product-name"><a class="product-link" href="single-product.html"><?php echo  $item['item_name'] ?? "Unknown";  ?></a></h3>
-                                <ul class="product-review">
+                                <!-- <ul class="product-review">
                                     <li class="review-item active"><i class="flaticon-star"></i></li>
                                     <li class="review-item active"><i class="flaticon-star"></i></li>
                                     <li class="review-item active"><i class="flaticon-star"></i></li>
                                     <li class="review-item"><i class="flaticon-star"></i></li>
                                     <li class="review-item"><i class="flaticon-star"></i></li>
-                                </ul>
+                                </ul> -->
                                 <div class="product-price">
                                     <span class="regular-price">$770.18</span>
                                     <span class="price">$<?php echo $item['item_price'] ?? '0' ; ?></span>
                                 </div>
-                                <div class="variable-single-item color-switch">
+                                <!-- <div class="variable-single-item color-switch">
                                     <div class="product-variable-color">
                                         <label>
                                             <input name="modal-product-color"
@@ -100,7 +95,7 @@ $in_cart = $Cart->getCartId($product->getData('cart'));
                                             <span class="product-color-gray"></span>
                                         </label>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <ul class="size-switch">
                                     <li class="single-size active">XL</li>

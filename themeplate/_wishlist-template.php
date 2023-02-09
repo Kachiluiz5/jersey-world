@@ -2,7 +2,7 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     if (isset($_POST['delete-wishlist-submit'])){
-        $deletedrecord = $Cart->deleteCart($_POST['item_id']);
+        $deletedrecord = $Cart->deleteWishlist($_POST['item_id']);
     }
 
     if(isset($_POST['wishlist-submit'])){
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                                                 <li class="review-item"><i class="flaticon-star"></i></li>
                                                 <li class="review-item"><i class="flaticon-star"></i></li>
                                             </ul>
-                                            <div class="variable-single-item color-switch">
+                                            <!-- <div class="variable-single-item color-switch">
                                                 <div class="product-variable-color">
                                                     <label>
                                                         <input name="modal-product-color"
@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                                                         <span class="product-color-gray"></span>
                                                     </label>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </td>
                                     <td>
@@ -100,27 +100,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                                     <td>
                                     <form method="post">
                                         <input type="hidden" value="<?php echo $item['item_id'] ?? 0; ?>" name="item_id">
-                                        <button type="submit" name="delete-cart-submit" class="delet-btn"><img src="assets/images/close.svg" alt="close" /></button>
+                                        <button type="submit" name="delete-wishlist-submit" class="delet-btn"><img src="assets/images/close.svg" alt="close" /></button>
                                     </form>
                                         
                                     </td>
-                                    <?php
+
+                                </tr>
+                                <?php
                         return $item['item_price'];
                     }, $wishlist); // closing array_map function
                 endforeach;
                 ?>
-                                </tr>
-
-
-
-
-
-
-
-
-
-                                
-
 
                             </tbody>
                         </table>

@@ -1,5 +1,7 @@
 <?php
  ob_start();
+session_start();
+
  // include header.php file
  require_once('header.php');
  

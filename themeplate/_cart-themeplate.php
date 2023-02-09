@@ -1,5 +1,10 @@
 <!-- Shopping cart section  -->
 <?php
+
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit;
+}  
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         if (isset($_POST['delete-cart-submit'])){
             $deletedrecord = $Cart->deleteCart($_POST['item_id']);
@@ -64,7 +69,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-info text-center">
-                                                    <h4 class="product-catagory">jersey</h4>
+                                                    <h4 class="product-catagory"><?php echo $item['item_cat'] ?? "Unknown"; ?></h4>
                                                     <h3 class="product-name"><a class="product-link" href="<?php printf('%s?item_id=%s', 'product.php',  $item['item_id']); ?>"><?php echo $item['item_name'] ?? "Unknown"; ?></a></h3>
                                                     <ul class="product-review">
                                                         <li class="review-item active"><i class="flaticon-star"></i></li>
@@ -73,7 +78,7 @@
                                                         <li class="review-item"><i class="flaticon-star"></i></li>
                                                         <li class="review-item"><i class="flaticon-star"></i></li>
                                                     </ul>
-                                                                                    <div class="variable-single-item color-switch">
+                                                                                    <!-- <div class="variable-single-item color-switch">
                                     <div class="product-variable-color">
                                         <label>
                                             <input name="modal-product-color"
@@ -91,7 +96,7 @@
                                                 class="color-select" type="radio">
                                             <span class="product-color-gray"></span>
                                         </label>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 </div>
                                 </div>
@@ -100,7 +105,7 @@
                                         <td>
                                             <div class="product-price text-center">
                                                 <!-- <h4 class="regular-price">$220.88</h4> -->
-                                                <h3> $<span class="product_price" data-id="<?php echo $item['item_id'] ?? '0'; ?>"><?php echo $item['item_price'] ?? 0; ?></span></h3>
+                                                <h3> $<span class="item_price" data-id="<?php echo $item['item_id'] ?? '0'; ?>"><?php echo $item['item_price'] ?? 0; ?></span></h3>
                                             
                                             </div>
                                             
@@ -190,10 +195,7 @@
                     <div class="col-12 col-sm-12 col-md-12 col-lg-4">
                         <div class="cart-page-bottom-box cart-page-sub-total-box">
                             
-                            <div class="sub-total-inner-box d-flex justify-content-between align-items-center">
-                                <h2 class="bottom-box-title m-0">Subtotal ( <?php echo isset($subTotal) ? count($subTotal) : 0; ?> item):&nbsp;</h2>
-                                <h2 class="bottom-box-title m-0">$<?php echo isset($subTotal) ? $Cart->getSum($subTotal) : 0; ?></h2>
-                            </div>
+                         
 
                             <!-- <div class="sub-total-inner-box d-flex justify-content-between align-items-center">
                                 <div class="cart-inner-shipping-title">
@@ -204,12 +206,12 @@
                             </div> -->
 
                             <div class="sub-total-inner-box d-flex justify-content-between align-items-center">
-                            <h2 class="">Total ( <?php echo isset($subTotal) ? count($subTotal) : 0; ?> item):&nbsp; <span class="text-danger">$<span class="text-danger" id="deal-price">
+                            <h2 class="bottom-box-title">Total ( <?php echo isset($subTotal) ? count($subTotal) : 0; ?> item):&nbsp; <span class="text-danger">$<span class="text-danger" id="deal-price">
                             <?php echo isset($subTotal) ? $Cart->getSum($subTotal) : 0; ?></span> </span> </h2>
                             </div>
                                 
                             <div class="form-button text-center">
-                                <a href="checkout.html" class="form-btn proceed-to-checkout-btn">Place an Order</a>
+                                <a href="checkout.html" class="form-btn proceed-to-checkout-btn">CHECKOUT ($<?php echo isset($subTotal) ? $Cart->getSum($subTotal) : 0; ?>)</a>
                             </div>
                         </div>
                     </div>

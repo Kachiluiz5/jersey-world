@@ -27,15 +27,12 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="product-single-left">
-                                <!-- <div class="product-thumbnail-image">
+                                <div class="product-thumbnail-image">
                                     <ul class="product-thumb-silide slider slider-nav">
-                                        <li class="single-item"><img class="single-item-image" src="assets/images/single-product-image1.png" alt="product" /></li>
-                                        <li class="single-item"><img class="single-item-image" src="assets/images/single-product-image2.png" alt="product" /></li>
-                                        <li class="single-item"><img class="single-item-image" src="assets/images/single-product-image3.png" alt="product" /></li>
-                                        <li class="single-item"><img class="single-item-image" src="assets/images/single-product-image4.png" alt="product" /></li>
-                                        <li class="single-item"><img class="single-item-image" src="assets/images/single-product-image2.png" alt="product" /></li>
-                                    </ul>
-                                </div> -->
+                                        <!-- <li class="single-item"><img class="single-item-image" src="assets/images/single-product-image1.png" alt="product" /></li>
+                                        <li class="single-item"><img class="single-item-image" src="assets/images/single-product-image2.png" alt="product" /></li> -->
+                    
+                                </div>
                                 <div class="product-slier-big-image">
                                     <div class="product-priview-slide slider slider-for">
                                         <div class="single-slide">
@@ -146,6 +143,15 @@
                     </div>
                 </div>
 
+
+
+
+
+
+
+
+                <!-- product description here including revciews -->
+
                 <div class="product-bottom-info mt-50">
                     <div class="nav-tabs-menu">
                         <ul class="nav nav-tabs" id="ProductTab" role="tablist">
@@ -168,9 +174,8 @@
 
                         <div class="tab-pane fade show active" id="Description" role="tabpanel" aria-labelledby="Description-tab">
                             <div class="product-description">
-                                <p class="description-text">Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Proin eget tortor risus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Sed porttitor lectus nibh. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur Vivamus magna justo,egestas non nisi. Curabitur non nulla sit amet nisl emper magna ultrices non. Sed ac elit viverra eros fermentum commodo. Nunc et congue enim. Nulla ultricies porta </p>
-                                <p class="description-text">Curabitur aliquet quam id dui posuere blandit. Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur non nulla sit amet nisl tempus convallis quis ac  egestas non nisi. Curabitur non nulla sit amet nisl tempus convallis quis ac emper magna ultrices non. Sed ac elit viverra eros fermentum commodo. Nunc et congue enim. Nulla ultricies</p>
-                                <p class="description-text">Cras ultricies ligula sed magna dictum porta. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Cras ultricies ligula sed magna dictum porta. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. emper magna ultrices non. Sed ac elit viverra eros fermentum commodo. Nunc et congue enim. Nulla ultricies</p>
+                                <p class="description-text"><?php echo $item['item_desc'] ?? "Unknown"; ?></p>
+                                
                             </div>
                         </div>
 
@@ -243,33 +248,26 @@
                             <div class="shipping-return-area">
                                 <div class="single-return-policy">
                                     <h3 class="return-title">RETURNS POLICY</h3>
-                                    <p class="return-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut blandit risus. Donec mollis nec tellus et rutrum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut consequat quam a purus faucibus scelerisque. Mauris ac dui ante. Pellentesque congue porttitor tempus. Donec sodales dapibus urna sed dictum. Duis congue posuere libero, a aliquam est porta quis.</p>
-                                    <p class="return-text">Donec ullamcorper magna enim, vitae fermentum turpis elementum quis. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-                                    <p class="return-text">Curabitur vel sem mi. Proin in lobortis ipsum. Aliquam rutrum tempor ex ac rutrum. Maecenas nunc nulla, placerat at eleifend in, viverra etos sem. Nam sagittis lacus metus, dignissim blandit magna euismod eget. Suspendisse a nisl lacus. Phasellus eget augue tincidunt, sollicitudin lectus sed, convallis desto. Pellentesque vitae dui lacinia, venenatis erat sit amet, fringilla felis. Nullam maximus nisi nec mi facilisis.</p>
+                                    <p class="return-text"><?php include("themeplate/returnpolicy.php"); ?></p>
+                                    
                                 </div>
-                                <div class="single-return-policy">
-                                    <h3 class="return-title">RETURNS POLICY</h3>
-                                    <p class="return-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut blandit risus. Donec mollis nec tellus et rutrum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut consequat quam a purus faucibus scelerisque. Mauris ac dui ante. Pellentesque congue porttitor tempus. Donec sodales dapibus urna sed dictum. Duis congue posuere libero, a aliquam est porta quis.</p>
-                                    <p class="return-text">Donec ullamcorper magna enim, vitae fermentum turpis elementum quis. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-                                    <p class="return-text">Curabitur vel sem mi. Proin in lobortis ipsum. Aliquam rutrum tempor ex ac rutrum. Maecenas nunc nulla, placerat at eleifend in, viverra etos sem. Nam sagittis lacus metus, dignissim blandit magna euismod eget. Suspendisse a nisl lacus. Phasellus eget augue tincidunt, sollicitudin lectus sed, convallis desto. Pellentesque vitae dui lacinia, venenatis erat sit amet, fringilla felis. Nullam maximus nisi nec mi facilisis.</p>
-                                </div>
-                            </div>
+
                         </div>
                         <div class="tab-pane fade" id="Additional-Information" role="tabpanel" aria-labelledby="Additional-Information-tab">
                             <div class="additional-information-area">
-                                <p class="additional-information-text">Quisque velit nisi, pretium ut lacinia in, elementum id enim. Pellentesque in ipsum id orci porta dapibus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui posuere blandit. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero malesuada feugiat. Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum porta. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Sed porttitor lectus nibh. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Nulla quis lorem ut libero malesuada feugiat. </p>
+
                                 <ul class="additional-feature">
                                     <li class="single-feature">
-                                        <h3 class="feature-title">Comodous:</h3>
-                                        <p class="feature-text">Comodous in tempor ullamcorper miaculis</p>
+                                        <h3 class="feature-title">Jersey Specification</h3>
+                                        <p class="feature-text">Player, Authentic, Spectator</p>
                                     </li>
                                     <li class="single-feature">
-                                        <h3 class="feature-title">Mattis laoreet:</h3>
-                                        <p class="feature-text">Pellentesque vitae neque mollis urna mattis laoreet.</p>
+                                        <h3 class="feature-title">Size:</h3>
+                                        <p class="feature-text">S, M, L, XL, XXL</p>
                                     </li>
                                     <li class="single-feature">
-                                        <h3 class="feature-title">Divamus de ametos:</h3>
-                                        <p class="feature-text">Divamus sit amet purus justo</p>
+                                        <h3 class="feature-title">Custom Type:</h3>
+                                        <p class="feature-text">None, Suede</p>
                                     </li>
                                     <li class="single-feature">
                                         <h3 class="feature-title">Molestie:</h3>

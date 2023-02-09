@@ -85,7 +85,7 @@ $(document).ready(function(){
     $qty_up.click(function(e){
 
         let $input = $(`.qty_input[data-id='${$(this).data("id")}']`);
-        let $price = $(`.product_price[data-id='${$(this).data("id")}']`);
+        let $price = $(`.item_price[data-id='${$(this).data("id")}']`);
 
         // change product price using ajax call
         $.ajax({url: "template/ajax.php", type : 'post', data : { itemid : $(this).data("id")}, success: function(result){
@@ -112,7 +112,7 @@ $(document).ready(function(){
     $qty_down.click(function(e){
 
         let $input = $(`.qty_input[data-id='${$(this).data("id")}']`);
-        let $price = $(`.product_price[data-id='${$(this).data("id")}']`);
+        let $price = $(`.item_price[data-id='${$(this).data("id")}']`);
 
         // change product price using ajax call
         $.ajax({url: "template/ajax.php", type : 'post', data : { itemid : $(this).data("id")}, success: function(result){

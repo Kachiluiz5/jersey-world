@@ -51,8 +51,8 @@
                                 </ul>
                             </div>
                             <div class="product-info text-center">
-                                <h4 class="product-catagory">jersey</h4>
-                                <h3 class="product-name"><a class="product-link" href="single-product.html"><?php echo  $item['item_name'] ?? "Unknown";  ?></a></h3>
+                                <h4 class="product-catagory"><?php echo  $item['item_cat'] ?? "Unknown";  ?></h4>
+                                <h3 class="product-name"><a class="product-link" href=""><?php echo  $item['item_name'] ?? "Unknown";  ?></a></h3>
                                 <ul class="product-review">
                                     <li class="review-item active"><i class="flaticon-star"></i></li>
                                     <li class="review-item active"><i class="flaticon-star"></i></li>
